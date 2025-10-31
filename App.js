@@ -81,4 +81,16 @@ const styles = StyleSheet.create({
     marginBottom: 20,
     borderRadius: 10,
   },
-});
+});const [mode, setMode] = useState('online'); // or 'offline'
+
+return (
+  <View style={styles.container}>
+    <Button title="Switch to Offline Mode" onPress={() => setMode('offline')} />
+
+    {mode === 'offline' ? (
+      <OfflineScreen />
+    ) : (
+      <MainCartoonixUI />
+    )}
+  </View>
+);
